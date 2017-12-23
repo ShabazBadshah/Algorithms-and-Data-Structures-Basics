@@ -1,8 +1,8 @@
 Stacks
 Friday December 22, 2017
 
-- A Stack is an ADT (abstract data type) that keeps track of the most recently used items, it can be implemented in many
-ways, but is commonly implemented as an array
+- A Stack is an ADT (abstract data type) that keeps track of the most recently used items, it can be 
+implemented in many ways, but is commonly implemented as an array
 - A Stack is a LIFO data type, where the last item in is the first item out 
 - When you're thinking of a stack, think a stack of plates
 	- How do you get to the 3rd plate in the stack (you remove all the ones on top first, and then
@@ -24,9 +24,8 @@ ways, but is commonly implemented as an array
 	s.push(2)
 	s.push(-3)
 	s.push(42)
-						    top
-							 | 
-	print(s) --> [1, 2, -3, 42]
+	
+	print(s) --> [1, 2, -3, 42]      (42 is the top of the stack, 1 is the bottom of the stack)
 	
 	print(s.pop()) --> 42
 	print(s) --> [1, 2, -3]
