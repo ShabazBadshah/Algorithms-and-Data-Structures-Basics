@@ -1,0 +1,50 @@
+Queues 
+Saturday December 23, 2017
+
+- A Queue is an ADT (abstract data type) that keeps track of the least recently used items.
+- A Stack is a FIFO data type, where the first item in is the first item to come out 
+- When you're thinking of a queue, think of yourself waiting in a line
+	- You get your turn based on when you lined up, if you were the first person to line-up, you are 
+	the first one to come out.
+		
+- Methods 
+	- dequeue(): O(1), removes and returns the element in the front of the queue
+	- enqueue(x): O(1), adds x to the back of the queue
+	- front(), O(1), returns what item is in the front of the queue
+	- size(), O(1), returns the size of the queue 
+	- search(x), O(n) searches for x in the queue 
+	
+- Example:
+	- The queue will be represented as an array where array[0] is the front of the Queue and 
+	array[len(array) - 1] is the back of the Queue
+	
+	q = Queue()
+
+	q.enqueue(1)
+	q.enqueue(2)
+	q.enqueue(3)
+	
+	print(q) --> [1, 2, 3]        (1 is the front of the queue, 3 is the back of the queue)
+	
+	print(q.front()) --> 1
+	print(q.dequeue()) --> 1 
+	print(q) --> [2, 3]
+	print(q.front()) --> 2
+	print(q.search(3)) --> False
+	print(q) --> [2, 3]
+	print(q.search(2)) --> True
+	print(q.dequeue()) --> 2
+	print(q.dequeue()) --> 3
+	print(q) --> []
+
+	
+- Applications
+	- A Queue is used to keep track of the order of things in the order they were requested
+	(i.e print jobs operating systems job scheduling)
+	- E.g. Printing Multiple Documents
+		- Lets say that you have a set of printer jobs that need to be printed
+			- You add another document to the queue to print. The job that was first to be added to
+			the queue will be printed first, the second one second, the third one third,..., and so 
+			forth. Your job will be printed last since it was the last one to be added (i.e. you 
+			have to wait your turn)
+	- Used in the Breadth-First-Search algorithm for searching/traversing graphs
