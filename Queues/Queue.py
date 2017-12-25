@@ -22,8 +22,8 @@ class Queue():
     def search(self, x):
         for i in range(len(self.__array)):
             if (self.__array[i] == x):
-                return True
-        return False
+                return self.__array[i]
+        return None
 
     def size(self):
         return len(self.__array)
@@ -46,6 +46,7 @@ print(q.front())
 print(q.dequeue())
 print(q)
 print(q.front())
+printS
 print(q.search(3))
 print(q)
 print(q.search(2))

@@ -17,8 +17,8 @@ class Stack():
     def search(self, x):
         for i in range(len(self.__array)):
             if (x == self.__array[i]):
-                return True
-        return False
+                return self.__array[i]
+        return None
 
     def peek(self):
         if (self.__size > 0):
@@ -47,6 +47,7 @@ print(s.pop())
 print(s.peek())
 print(s)
 print(s.size())
+print
 print(s.search(-99))
 print(s.search(-3))
 print(s.search(2))
