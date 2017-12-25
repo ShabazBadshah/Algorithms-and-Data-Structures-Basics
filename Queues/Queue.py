@@ -12,6 +12,13 @@ class Queue():
         if (self.__size > 0):
             return self.__array[0]
         return None
+
+    def update(self, x, data):
+        for i in range(len(self.__array)):
+            if (self.__array[i] == x):
+                self.__array[i] = data
+                return True
+        return False
         
     def dequeue(self):
         if (self.__size > 0):
@@ -46,7 +53,8 @@ print(q.front())
 print(q.dequeue())
 print(q)
 print(q.front())
-printS
+print(q.search(3))
+print(q.update(3, 4))
 print(q.search(3))
 print(q)
 print(q.search(2))

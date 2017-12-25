@@ -1,0 +1,77 @@
+Linked Lists
+Monday December 25, 2017
+
+- A Linked List (LL) data structure that holds a collection of Nodes where each Node only knows
+about the item infront of it (singly linked)
+- The implementation of the given LL code is a doubly linked list where each Node has a reference to 
+the Node infront of it and the Node behind it
+- LL are dynamic in size, unlike arrays (which are fixed in size, i.e. you can't expand them once 
+you've made them) LL can have additional data/nodes added to them if needed
+- Think of a linked list like you're stuck in a giant traffic jam. You only know about (with this
+implementation) the car infront of you and the car behind you. You do not know about any other cars,
+you only care for the car infront of you to move, and the car behind you to follow you.
+
+- Methods 
+	- insert(x), O(1) adds x to the front of the linked list
+	- remove(x), O(n) removes and returns x from the LL if found, returns None otherwise
+	- update(x, data), O(n) updates x to data if found, returns True if update was done, False 
+	  otherwise
+	- search(x), O(n) returns x if it is found in the LL, returns None otherwise
+	- size(x), O(1), returns the size of the LL
+	
+- Example:
+	- When printed out, the Node farthest right is the head
+	
+	ll = LinkedList()
+
+	ll.insert(1)
+	ll.insert(2)
+	ll.insert(3)
+	ll.insert(-23)
+	ll.insert(42)
+	ll.insert(32)
+
+	print (ll) --> 32<->42<->-23<->3<->2<->1       (1 is the head)
+
+	print(ll.search(1)) --> 1
+	print(ll.search(2)) --> 2
+	print(ll.search(3)) --> 3
+
+	ll.remove(-1) --> None
+	print(ll) --> 32<->42<->-23<->3<->2<->1
+
+	print(ll.remove(3)) --> 3
+	print(ll.remove(-23)) --> -23
+	print(ll.remove(42)) --> 42
+	print(ll.update(1, 2)) --> True
+	print(ll.remove(1)) --> None
+	print(ll.remove(1)) --> None
+	print(ll) 32<->2<->2
+
+	print(ll.size()) --> 3
+	print(ll.remove(2)) --> 2
+	print(ll) --> 32<->2
+	print(ll.remove(32)) --> 32
+	print(ll) --> 2
+	print(ll.size()) --> 1
+	print(ll.remove(2)) --> 2
+	print(ll) --> "List is empty"
+
+
+	
+- Applications
+	- A LL does not have a direct use as it is data structure that holds collections of 
+	items, the application depends on the design decisions and algorithms being used for the given
+	program
+	- An example of a Linked List being used in applications is your image gallery on Windows.
+		- When you click on an image in a folder it will show you the front and back buttons to 
+		move to the next or previous images in the gallery. This is an example of a doubly LL as
+		each image (i.e. Node) contains references to the next and previous image (i.e. next and 
+		prev fields)
+		
+
+- Additional Notes
+	- There are other variations of LL such as circular singly LL, circular doubly LL, etc
+	- LL are used in other data structures such as chaining in Hashtables
+	- Used LL based on design decisions for your program, they are good for some things and not for 
+	others (e.g. searching)

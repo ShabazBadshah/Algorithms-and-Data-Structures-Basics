@@ -14,6 +14,13 @@ class Stack():
             return self.__array.pop()
         return None
 
+    def update(self, x, data):
+        for i in range(len(self.__array)):
+            if (x == self.__array[i]):
+                self.__array[i] = data
+                return True
+        return False 
+
     def search(self, x):
         for i in range(len(self.__array)):
             if (x == self.__array[i]):
@@ -50,4 +57,7 @@ print(s.size())
 print
 print(s.search(-99))
 print(s.search(-3))
+print (s.update(2, -3))
+print(s.search(-3))
 print(s.search(2))
+print(s)

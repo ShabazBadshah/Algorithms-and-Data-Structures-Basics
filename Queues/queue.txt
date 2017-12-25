@@ -12,7 +12,9 @@ Saturday December 23, 2017
 	- enqueue(x): O(1), adds x to the back of the queue
 	- front(), O(1), returns what item is in the front of the queue
 	- size(), O(1), returns the size of the queue 
-	- search(x), O(n) searches for x in the queue 
+	- search(x), O(n) searches for x in the queue  and returns it if found, returns None otherwise
+	- update(x, data), O(n) updates the value of element x to data, returns True if update was 
+	  successful, False if x was not updated or found in the Queue
 	
 - Example:
 	- The queue will be represented as an array where array[0] is the front of the Queue and 
@@ -30,11 +32,14 @@ Saturday December 23, 2017
 	print(q.dequeue()) --> 1 
 	print(q) --> [2, 3]
 	print(q.front()) --> 2
+	print(q.search(3)) --> 3
+	print(q.update(3, 4)) 
+	print(q.search(3)) --> None
 	print(q.search(3)) --> False
-	print(q) --> [2, 3]
-	print(q.search(2)) --> True
+	print(q) --> [2, 4]
+	print(q.search(2)) --> 2
 	print(q.dequeue()) --> 2
-	print(q.dequeue()) --> 3
+	print(q.dequeue()) --> 4
 	print(q) --> []
 
 	
