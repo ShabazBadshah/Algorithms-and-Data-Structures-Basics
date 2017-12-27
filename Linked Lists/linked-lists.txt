@@ -12,7 +12,7 @@ implementation) the car infront of you and the car behind you. You do not know a
 you only care for the car infront of you to move, and the car behind you to follow you.
 
 - Methods 
-	- insert(x), O(1) adds x to the front of the linked list
+	- insert(x), O(1) adds x to the back of the linked list
 	- remove(x), O(n) removes and returns x from the LL if found, returns None otherwise
 	- update(x, data), O(n) updates x to data if found, returns True if update was done, False 
 	  otherwise
