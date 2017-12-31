@@ -1,0 +1,62 @@
+Binary Heaps
+Wednesday December 20, 2017
+
+- A Heap is a data structure 
+- A Binary heap is an array that satisfies the heap property and is nearly complete(the heap DS is 
+  a tree based DS, we look at heaps as if they are trees, but implement them as arrays) 
+	- Heap Property
+		- Given any node, its children always have values that are less then or equal to the 
+		parent's value (this is a max heap)
+	- Nearly Complete
+		- The tree is full on all levels except the last level. On the last level all nodes have to 
+		be as far left as possible with no gaps between two nodes
+		
+	- Max Heap: the children nodes have values less than or equal to the parent (largest value is at 
+	the root)
+	- Min Heap: the children nodes have values greater than or equal to the parent (smalled value is
+	at the root)
+	
+	E.g. Max Heap
+	
+				   	7 <-------- root      
+			    /	    \
+			   4		 3
+		     /	 \     /   
+		    1	  4  -1		
+
+			
+- Methods 
+	- max(): O(1), return maximum element in stack
+	- insert(element): O(log n), insert element into heap (while maintaining heap property)
+	- extract_max: O(log n)
+	- build_heap(list): O(n), converts the array (called list) into a heap (I made this private in 
+	my implementation since the Binary_Min_Heap will automatically make a heap)
+	
+- Accessing Elements in a Binary Heap
+	- Given an arbitrary element in an array, we can compute the 'parent', 'left', and 'right' 
+	elements 
+	- HEAP INDEXING STARTS AT 1 NOT 0 
+	
+	- Given index i in an array we can find the following elements (assuming index starts at 1)
+		- Left Child: 2i + 1
+		- Right Child: 2i + 2
+		- Parent Child: floor(i - 1 // 2)
+	
+- Example:
+	l = [9, 5, 6, 2, 3, -1]
+	h = Binary_Min_Heap(l)
+
+	print h.extract_min() --> -1
+	print h --> [2, 3, 9, 6, 5] <------ 2 is the top of the heap (the smallest element)
+	h.insert(-3)
+	print "min: {0}".format(h.get_min()) --> min: -3
+	print h --> [-3, 3, 2, 6, 5, 9]
+
+	
+- Applications
+	- A Heap can be used to implement the Priority Queue ADT (Abstract data type)
+		- The priority queues are very prominently used in scheduling jobs to run in your 
+		operating system
+	- Used to implement Heapsort (uses heaps to sort a list)
+	- Can be used to find the kth largest item in a collection
+	
