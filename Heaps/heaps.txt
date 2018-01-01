@@ -44,7 +44,7 @@ Wednesday December 20, 2017
 	
 - Example:
 	l = [9, 5, 6, 2, 3, -1]
-	h = Binary_Min_Heap(l)
+	h = bin_min_heap(l)
 
 	print h.extract_min() --> -1
 	print h --> [2, 3, 9, 6, 5] <------ 2 is the top of the heap (the smallest element)

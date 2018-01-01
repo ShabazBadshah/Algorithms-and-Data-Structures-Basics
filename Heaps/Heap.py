@@ -1,4 +1,4 @@
-class Binary_Min_Heap:
+class bin_min_heap:
     def __init__(self, array):
         self.__heap = []
         self.__heap_size = 0
@@ -66,7 +66,7 @@ class Binary_Min_Heap:
         return str(self.__heap)
 
 l = [9, 5, 6, 2, 3, -1]
-h = Binary_Min_Heap(l)
+h = bin_min_heap(l)
 
 print h.extract_min()
 print h
