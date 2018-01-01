@@ -26,6 +26,9 @@ class Binary_Min_Heap:
         if (self.__heap_size != 0):
             return self.__heap[0]
         return None
+
+    def get_heap(self):
+        return self.__heap
 		
     def __build_min_heap(self, array): 
         self.__heap = array[:]
