@@ -15,3 +15,6 @@ def bubble_sort(arr_to_sort):
 
 l = [12, 11, 13, 5, 6, 7, -1, -5356]
 print bubble_sort(l)
+l = ['F', 'C', 'A', 'Z', 'W']
+print bubble_sort(l)
+
