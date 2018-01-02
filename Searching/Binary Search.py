@@ -2,6 +2,8 @@
 Returns the element if found
 otherwise returns None
 
+Only works on sorted lists
+
 Runtime: O(log n)
 Space: O(1)
 '''
