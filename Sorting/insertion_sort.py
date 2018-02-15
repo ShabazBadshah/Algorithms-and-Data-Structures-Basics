@@ -9,13 +9,13 @@ def insertion_sort(arr):
 
     for i in range(0, len(arr)):
 
-        key = arr[i]
-        j = i - 1
+        curr_el = arr[i]
+        pos = i
 
-        while (j >= 0 and key < arr[j]):
-            arr[j + 1] = arr[j]
-            j -= 1
-        arr[j + 1] = key
+        while (pos > 0 and arr[pos - 1] > curr_el):
+            arr[pos]=arr[pos - 1]
+            pos -= 1
+        arr[pos] = curr_el
 
     return arr
 
