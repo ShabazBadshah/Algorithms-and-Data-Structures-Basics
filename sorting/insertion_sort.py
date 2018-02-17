@@ -13,6 +13,7 @@ def insertion_sort(arr):
         pos = i
 
         while (pos > 0 and arr[pos - 1] > curr_el):
+            print arr[pos]
             arr[pos]=arr[pos - 1]
             pos -= 1
         arr[pos] = curr_el
