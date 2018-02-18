@@ -14,12 +14,14 @@ def heapify(arr_to_sort, ind, heap_size):
         heapify(arr_to_sort, largest, heap_size)
 
 '''
-Runtime: O(n log n)
+Runtime Worst Case: O(n log n)
+Runtime Avg Case: O(n log n)
+Runtime Best Case: O(n log n)
 Space: O(1)
 '''
 def heapsort(arr_to_sort):
 
-    # Bulds max heap
+    # Builds max heap
     for i in range(len(arr_to_sort) // 2 - 1, -1, -1):
         heapify(arr_to_sort, i, len(arr_to_sort))
 
