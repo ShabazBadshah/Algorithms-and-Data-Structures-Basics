@@ -1,8 +1,8 @@
 
 '''
-Runtime: O(n^2)
+Runtime Worst Case: O(n^2)
 Runtime Avg Case: O(n^2)
-Best Case: O(n)
+Runtime Best Case: O(n)
 Space: O(1)
 '''
 def insertion_sort(arr):
@@ -13,8 +13,7 @@ def insertion_sort(arr):
         pos = i
 
         while (pos > 0 and arr[pos - 1] > curr_el):
-            print arr[pos]
-            arr[pos]=arr[pos - 1]
+            arr[pos] = arr[pos - 1]
             pos -= 1
         arr[pos] = curr_el
 
