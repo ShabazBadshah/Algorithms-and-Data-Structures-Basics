@@ -12,7 +12,7 @@ def selection_sort(arr):
         max_ind = i
         j = i
 
-        while (j < len(arr)):
+        while (j < len(arr)): 
             if (arr[j] > arr[max_ind]): max_ind = j
             j += 1
 
