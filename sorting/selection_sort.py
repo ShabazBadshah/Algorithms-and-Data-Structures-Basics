@@ -10,10 +10,11 @@ def selection_sort(arr):
     for i in range(len(arr)):
         
         max_ind = i
+        j = i
 
-        for j in range (i, len(arr)):
-            if (arr[j] > arr[max_ind]): 
-                max_ind = j
+        while (j < len(arr)):
+            if (arr[j] > arr[max_ind]): max_ind = j
+            j += 1
 
         arr[i], arr[max_ind] = arr[max_ind], arr[i]     
 
