@@ -6,8 +6,7 @@ Space: O(1)
 '''
 
 def quicksort(arr):
-
-  return quicksort_helper(arr,0,len(arr)-1)
+	return quicksort_helper(arr,0,len(arr)-1)
 
 def quicksort_helper(arr,left_ind,right_ind):
 
