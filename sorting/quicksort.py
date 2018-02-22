@@ -5,6 +5,14 @@ Runtime Best Case: O(n log n)
 Space: O(1)
 '''
 
+'''
+Quicksort works by splitting up the array via a pivot. All elements less than the pivot are 
+moved to the left of a pivot, and all the elements larger are moved to the right. The algorithm
+is recursively called on the sub-arrays of the pivot until the entire array is sorted.
+Mergesort is similar to Quicksort, except it does not use constant space, Quicksort is an
+in-place sorting algorithm.
+'''
+
 def quicksort(arr):
 	return quicksort_helper(arr,0,len(arr)-1)
 
