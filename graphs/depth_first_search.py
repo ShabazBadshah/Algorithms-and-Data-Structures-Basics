@@ -1,25 +1,24 @@
-from collections import deque
+def dfs(g, node_to_start_from):
 
-def bfs(g, node_to_search_from):
-
-    if not g[node_to_search_from]:
+    if not g[node_to_start_from]:
         return
 
-    queue = deque(node_to_search_from)
     visited = []
+    stack = [node_to_start_from]
 
-    while queue:
-        curr_node = queue.popleft()
-        
+    while stack:
+        curr_node = stack.pop()
+
         if curr_node not in visited:
             visited.append(curr_node)
             children = graph[curr_node]
 
             for child in children:
-                queue.append(child)
-                
+                stack.append(child)
+
+
     return visited
-        
+
 
 graph = {'A': ['B', 'C', 'E'],
          'B': ['D', 'E'],
@@ -27,5 +26,5 @@ graph = {'A': ['B', 'C', 'E'],
          'D': ['E'],
          'E': ['C']
          }
-
-print bfs(graph, 'A')
+    
+print dfs(graph, 'A')
