@@ -1,9 +1,16 @@
 '''
-Sorts the list from least to greatest
-
-Runtime: O(n^2)
+Runtime Worst Case: O(n^2)
+Runtime Avg Case: O(n^2)
+Runtime Best Case: O(n)
 Space: O(1)
 '''
+
+'''
+Bubble sort works by swapping an element with the one adjacent to it until it is in its correct
+position (in their correct sorted position in the array). It keeps doing this with every 
+element until the entire array is sorted.
+'''
+
 def bubble_sort(arr_to_sort):
 
     for i in range(len(arr_to_sort)):
