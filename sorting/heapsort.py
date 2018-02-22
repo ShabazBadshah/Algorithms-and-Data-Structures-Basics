@@ -19,6 +19,14 @@ Runtime Avg Case: O(n log n)
 Runtime Best Case: O(n log n)
 Space: O(1)
 '''
+
+'''
+Heapsort utilizes the heap data structure to sort. It first builds a heap with the array given.
+Next it will swap the first and last element of the array. Then it will 'bubble down/heapify' 
+the first element of the array. Once the element has been shifted to its correct position, 
+the heap size will be decremented and this process will continue until the array is sorted.
+'''
+
 def heapsort(arr_to_sort):
 
     # Builds max heap
