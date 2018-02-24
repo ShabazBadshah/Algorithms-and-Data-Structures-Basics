@@ -15,7 +15,7 @@ def binary_search(arr_to_search, element_to_find):
     if arr_to_search[median] == element_to_find:
         return arr_to_search[median]
     # If there is only one element left in the list and its not the one we are looking for
-    elif len(arr_to_search) == 1 and arr_to_search[0] != element_to_find:
+    elif median == 0 and arr_to_search[median] != element_to_find:
         return None
 
     # Check left half of list    
@@ -32,3 +32,8 @@ print binary_search(l, 0)
 l = sorted(['F', 'C', 'A', 'Z', 'W'])
 print binary_search(l, 'A')
 print binary_search(l, 'Y')
+
+l = [1, 2, 3, 4]
+print binary_search(l, 4)
+l.remove(4)
+print binary_search(l, 4)
