@@ -1,3 +1,10 @@
+'''
+Runtime (Adjacency List): O(|V|+|E|)
+Space (Adjacency List): O(|V|+|E|)
+
+Returns a traversal of the graph where all child nodes are visited first before neighbour nodes
+'''
+
 def dfs(g, node_to_start_from):
 
     if not g[node_to_start_from]:

@@ -1,5 +1,12 @@
 from collections import deque
 
+'''
+Runtime (Adjacency List): O(|V|+|E|)
+Space (Adjacency List): O(|V|+|E|)
+
+Returns a traversal of the graph where all neighbour nodes are visited first before children nodes
+The algorithm may not visit all verticies (if the graph is disconnected at some point between nodes)
+'''
 def bfs(g, node_to_search_from):
 
     if not g[node_to_search_from]:
