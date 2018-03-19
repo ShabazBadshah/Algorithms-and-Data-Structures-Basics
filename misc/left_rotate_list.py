@@ -1,7 +1,6 @@
 from collections import deque
 
 def left_rotate_normal(arr, amount_rot):
-
     left_rot_arr = []
 
     for i in range (amount_rot, len(arr)):
@@ -12,8 +11,8 @@ def left_rotate_normal(arr, amount_rot):
 
     return left_rot_arr
 
-def left_rotate_queue(arr, amount_rot):
 
+def left_rotate_queue(arr, amount_rot):
     lstQueue = deque()
 
     for val in arr:
