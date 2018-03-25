@@ -1,6 +1,18 @@
 import random
 import time
 
+'''
+Runtime Worst Case: infinite 
+Runtime Avg Case: O(n*n!) = O(n!)
+Runtime Best Case: O(n)
+Space: O(1)
+'''
+
+'''
+Bogosort is not a sorting algorithm used by anyone, anywhere. It's more of a joke than an actual
+sorting algorithm. Bogosort will take an array and randomize it to sort it. It will keep
+randomizing the array until it comes back sorted.
+'''
 def bogosort(arr):
     while not is_sorted(arr):
         random.shuffle(arr)
