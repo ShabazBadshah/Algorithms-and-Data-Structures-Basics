@@ -1,36 +1,8 @@
-class node:
-    def __init__(self, data, left_child=None, right_child=None):
-        self.__data = data
-        self.__left_child = left_child
-        self.__right_child = right_child
-
-    def left_child(self):
-        return self.__left_child
-
-    def right_child(self):
-        return self.__right_child
-
-    def set_left_child(self, new_left_child):
-        self.__left_child = new_left_child
-
-    def set_right_child(self, new_right_child):
-        self.__right_child = new_right_child
-
-    def get_data(self):
-        return self.__data
-
-    def __str__(self):
-
-        left_str = str(self.__left_child)
-        right_str = str(self.__right_child)
-
-        if left_str == "None":
-            left_str = ""
-        if right_str == "None":
-            right_str = ""
-
-        return "[{0}:{1}:{2}]".format(self.__data, left_str, right_str)
-
+class Node:
+    def __init__(self, data, left=None, right=None):
+        self.data = data
+        self.left = left
+        self.right = right
 
 '''
 Binary Search Tree Property:
@@ -41,89 +13,149 @@ that are greater than or equal to the root's value
 
 Space Complexity: O(n)
 '''
-class binary_search_tree:
-    def __init__(self, root):
-        self.__root = root
-
-    def minimum(self, root):
-
-        if root == None:
-            return None
-
-        if root.left_child() == None:
-            return root
-        return self.minimum(root.left_child())
-
-    def maximum(self, root):
-
-        if root == None:
-            return None
-
-        if root.right_child() == None:
-            return root
-        return self.maximum(root.right_child())
+class BST:
+    def __init__(self):
+        self.__root = None
 
     '''
-    Runtime: O(n) worst case, O(log n) average
+    Finds the smallest element in the BST
+    Runtime: O(n) worst case, O(log n) average case
     '''
-    def insert(self, root, node):
+    def minimum(self):
+        return self.__minimum(self.__root)
+    def __minimum(self, root):
+        if root is None or root.left is None:
+            return root.data
+        return self.__minimum(root.left)
 
-        if root == None:
-            root = node
-            return True
+    '''
+    Finds the maximum element in the BST
+    Runtime: O(n) worst case, O(log n) average case
+    '''
+    def maximum(self):
+        return self.__maximum(self.__root)
+    def __maximum(self, root):
+        if root is None or root.right is None:
+            return root.data
+        return self.__maximum(root.right)
+
+
+    '''
+    Inserts the given Node into the BST
+    Runtime: O(n) worst case, O(log n) average case
+    '''
+    def insert(self, value):
+        return self.__insert(self.__root, value)
+    def __insert(self, root, value):
+        if root is None:
+            self.__root = Node(value)
+            # return True
         else:
-            if node.get_data() >= root.get_data():
-                if root.left_child() == None:
-                    root.set_left_child(node)
-                    return True
+            if value >= root.data:
+                if root.right is not None:
+                    self.__insert(root.right, value)
                 else:
-                    return self.insert(root.left_child(), node)
-            else:
-                if root.right_child() == None:
-                    root.set_right_child(node)
-                    return True
+                    root.right = Node(value)
+                    # return True
+            elif value < root.data:
+                if root.left is not None:
+                    self.__insert(root.left, value)
                 else:
-                    return self.insert(root.right_child(), node)
-        return False
+                    root.left = Node(value)
+                    # return True
+         
+        # return False
 
 
     def delete(self, root, data):
         pass
 
+
     '''
+    Finds and returns the given Node in the BST
     Runtime: O(n) worst case, O(log n) average
     '''
-    def search(self, node, element_to_find):
+    def search(self, element_to_find):
+        return self.__search(self.__root, element_to_find)
 
-        if node.get_data() == element_to_find:
-            return node
+    def __search(self, root, element_to_find):
+        if root == None:
+            return None
 
-        if element_to_find >= node.get_data():
-            return search(node.right_child(), element_to_find)
+        if root.data == element_to_find:
+            return root.data
+
+        if element_to_find >= root.data:
+            return self.__search(root.right, element_to_find)
         else:
-            return search(node.left_child(), element_to_find)
+            return self.__search(root.left, element_to_find)
 
-        return None
 
     '''
+    Returns the root of the BST
     Runtime: O(1)
     '''
     def get_root(self):
         return self.__root
 
-    def __str__(self):
-        return str(self.__root)
 
-root = node(0)
-n1 = node(2)
-n2 = node(1)
-n3 = node(-1)
-n4 = node(-2)
+    '''
+    Runs a preorder traversal on the BST
+    Runtime: O(n)
+    '''
+    def preorder(self):
+        return self.__preorder(self.__root)
+    def __preorder(self, root):
+        if root:
+            print (root.data)
+            self.__preorder(root.left)
+            self.__preorder(root.right)
 
-bst = binary_search_tree(root)
-print bst
-print bst.insert(root, n1)
-print bst.insert(root, n2)
-print bst.insert(root, n3)
-print bst.insert(root, n4)
-print bst
+
+    '''
+    Runs a inorder traversal on the BST
+    Runtime: O(n)
+    '''
+    def inorder(self):
+        return self.__inorder(self.__root)    
+    def __inorder(self, root):
+        if root:
+            self.__inorder(root.left)
+            print (root.data)
+            self.__inorder(root.right)
+
+
+    '''
+    Runs a postorder traversal on the BST
+    Runtime: O(n)
+    '''
+    def postorder(self):
+        return self.__postorder(self.__root)
+    def __postorder(self, root):
+        if root:
+            self.__postorder(root.left)
+            self.__postorder(root.right)
+            print (root.data)
+
+
+bst = BST()
+bst.insert(2)
+bst.insert(5)
+bst.insert(3)
+bst.insert(1)
+bst.insert(4)
+
+print ("Minimum: " + str(bst.minimum()))
+print ("Maximum: " + str(bst.maximum()) + "\n")
+print("Searching for element 1:     " + str(bst.search(1)))
+print("Searching for element 2:     " + str(bst.search(2)))
+print("Searching for element -2:    " + str(bst.search(-2)))
+
+print ("\nPreorder Traversal:")
+bst.preorder()
+
+print ("Postorder Traversal:")
+bst.postorder()
+
+print ("Inorder Traversal:")
+bst.inorder()
