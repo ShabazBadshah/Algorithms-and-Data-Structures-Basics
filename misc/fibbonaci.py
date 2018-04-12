@@ -1,12 +1,16 @@
 def print_fibbonaci(num_of_elements):
-    fib = [1, 1] 
+    
+    fib = [1] 
 
     if (num_of_elements <= 2):
         return 1
 
-    for i in range(2, num_of_elements + 1):
+    for i in range(1, num_of_elements):
         fib.append(fib[i - 1] + fib[i - 2])
-        print (fib[i])    
+        
+    return fib[num_of_elements - 1]
 
-
-print_fibbonaci(5) #8
+print(print_fibbonaci(5))
+print(print_fibbonaci(10))
+print(print_fibbonaci(1000))
+print(print_fibbonaci(10000))
