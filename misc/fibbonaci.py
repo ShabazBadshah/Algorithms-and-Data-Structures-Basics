@@ -9,7 +9,7 @@ def print_fibbonaci(num_of_elements):
         
     return fib[num_of_elements - 1]
 
-
+# Uses O(1) space vs O(n) space for print_fibbonaci(...)
 def print_fibbonaci_space(num_of_elements):
     a, b = 0, 1
     for i in range(num_of_elements + 1):
