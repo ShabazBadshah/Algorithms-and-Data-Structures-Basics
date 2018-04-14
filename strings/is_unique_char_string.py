@@ -7,6 +7,7 @@ def is_unique_char_string(string):
             str_hash[letter] = ''
     return True
 
+# Runs in O(n)
 print (is_unique_char_string("abc"))
 print (is_unique_char_string(""))
 print (is_unique_char_string("racecar"))
