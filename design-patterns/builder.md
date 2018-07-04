@@ -17,7 +17,7 @@ class Pizza {
   }
 }
 
-class PizzaBuilder() {
+class PizzaBuilder {
   private Cheese cheese;
   private Dough dough;
   private Toppings toppings;
@@ -26,10 +26,12 @@ class PizzaBuilder() {
     this.cheese = cheese;
     return this;
   }
+  
   public addDough(Dough dough) { 
     this.dough = dough;
     return this;
   }
+  
   public addToppings(Toppings toppings) { 
     this.toppings = toppings;
     return this;
@@ -38,6 +40,7 @@ class PizzaBuilder() {
   public Pizza buildPizza() {
     return new Pizza(this.cheese, this.dough, this.toppings);
   }
+  
 }
 
 class Main {
