@@ -59,4 +59,4 @@ class Main {
 |  ------ | ------ |
 |  creates entire object with a single call | creates object in pieces |
 |  creates the same object every time | can create several variations of the object |
-|  avoid construction pollution |  |
+|  *avoid construction pollution* | *avoid construction pollution* |
