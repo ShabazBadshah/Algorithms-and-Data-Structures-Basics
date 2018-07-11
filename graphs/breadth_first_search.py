@@ -6,6 +6,12 @@ Space (Adjacency List): O(|V|+|E|)
 
 Returns a traversal of the graph where all neighbour nodes are visited first before children nodes
 The algorithm may not visit all verticies (if the graph is disconnected at some point between nodes)
+
+Other Notes:
+- Can be used to find shortest path between two nodes
+- Used for web crawlers that index pages 
+- Cycle detection in undirected graphs (determining if a cycle exists in the graph)
+- Path finding, determining if a path exists between two nodes
 '''
 def bfs(g, node_to_search_from):
 
