@@ -20,13 +20,29 @@ A binary search is best applied to a collection of already sorted data. Since th
 
 ---
 
-__4. What is a linked list?__
+## 4. What is a linked list
 
-__5. How do you reference all the elements in a one-dimension array?__
+A linked list is data structure created with *Nodes*. A Node contains the data that it is storing and reference to the next Node in the list. Think of a linked list as a single-filed line, where you only know about the person who is infront of you. The structure just described is a single-linked list. A *Linked List* will always contain a *Head* reference which keeps track of the current Node that is being looked at and is used to traverse the list. The Head can be thought of as a person going through the line and picking individual people out.
 
-__6. In what areas do data structures are applied?__
+---
 
-__7. What is LIFO?__
+## 5. How do you reference all the elements in a one-dimension array
+
+Use a for loop and traverse from index 0 to len(list)-1 and perform operation(s) on each item in the array.
+
+---
+
+## 6. In what areas are data structures are applied
+
+Anything that involves an algorithm, or when you need to organize data.
+
+---
+
+## 7. What is LIFO
+
+Last-In-First-Out. A Stack data structure utilizes a LIFO approach, where the last item inserted into the Stack is the first item to be taken out. A LIFO structure is analogous to a stack of dishes. If you have a stack of dishes and need to take one off, you will take a dish off the top. If you need to add a dish to the stack of dishes, you will add it to the top.
+
+---
 
 __8. What is queue?__
 
@@ -82,7 +98,7 @@ __33. Do all declaration statements result in a fixed reservation in.__
 
 __34. What are ARRAYs?__
 
-__35. What is the minimum number of queues needed when implementing a.__
+__35. What is the minimum number of queues needed when implementing a priority queue.__
 
 __36. Which sorting algorithm is considered the fastest?__
 
