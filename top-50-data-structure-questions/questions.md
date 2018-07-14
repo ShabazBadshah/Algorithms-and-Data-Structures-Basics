@@ -44,9 +44,38 @@ Last-In-First-Out. A Stack data structure utilizes a LIFO approach, where the la
 
 ---
 
-__8. What is queue?__
+## 8. What is queue
 
-__9. What are binary trees?__
+A queue is a data structure that deals with elements in a FIFO manner. First-In-First-Out. The first item to come into the queue is the first item to leave the queue, similar to how you might wait in a line. A queue has 2 main operations
+
+1. Dequeue(), *removes* an item from the front of the queue and returns it
+2. Enqueue(), *adds* an item to the end of a queue 
+
+Worst-case Runtimes:
+
+- Search, O(n)
+- Enqueue, O(1)
+- Dequeue, O(n)
+
+---
+
+## 9. What are binary trees
+
+A Binary Tree is a tree where every node in the tree has at most 2 children. 
+
+Worst-case Runtimes:
+
+- Search, O(n)
+- Insert, O(n)
+- Delete, O(n)
+
+Best-case Runtimes (when the tree is balanced):
+
+- Search, O(log n)
+- Insert, O(log n)
+- Delete, O(log n)
+
+---
 
 __10. Which data structures are applied when dealing with a recursive.__
 
