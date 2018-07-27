@@ -1,4 +1,4 @@
-import collections
+from collections import deque
 
 class Node:
   def __init__(self, val, left=None, right=None):
@@ -26,7 +26,7 @@ def averageOfLevels(root):
   if not root.left and not root.right:
     return [root.val]
 
-  queue = collections.deque()
+  queue = deque()
   queue.append(root)
 
   while queue:
