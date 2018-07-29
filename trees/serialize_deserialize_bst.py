@@ -35,7 +35,7 @@ def serializeBst(root):
     return '#'
 
   if not root.left and not root.right:
-    return str(root.val) + "# #"
+    return str(root.val) + " # #"
 
   queue = deque()
   queue.append(root)
