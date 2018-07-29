@@ -69,7 +69,7 @@ def createNode(val):
 def deserializeBst(serializedBst):
   nodes = serializedBst.split(' ')
 
-  if not nodes[0]:
+  if not nodes[0] or nodes[0] == '#':
     return None
 
   root = createNode(int(nodes[0]))
