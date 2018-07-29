@@ -6,16 +6,26 @@ class Node:
     self.left = left
     self.right = right
 
-n4 = Node(5)
-n3 = Node(3)
-n2 = Node(1, n4)
-n1 = Node(4, n3)
-root = Node(2, n1, n2)
-
 def averageOfLevels(root):
   """
   :type root: TreeNode
   :rtype: List[float]
+
+  Given a binary tree, returns the average value of 
+  all the nodes on each level
+
+  e.g.
+  
+  Given the following tree
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+
+  The list of floats to be returned will be the following
+  [3, 14.5, 11]
   """
 
   if not root:
@@ -45,5 +55,11 @@ def averageOfLevels(root):
       avgValLevel.append(currLevelSum / currLevelCount)
 
   return avgValLevel
+
+n4 = Node(5)
+n3 = Node(3)
+n2 = Node(1, n4)
+n1 = Node(4, n3)
+root = Node(2, n1, n2)
 
 print (averageOfLevels(root))
