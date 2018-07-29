@@ -6,12 +6,6 @@ class Node:
     self.left = left
     self.right = right
 
-n4 = Node(5)
-n3 = Node(3)
-n2 = Node(1, n4)
-n1 = Node(4, n3)
-root = Node(2, n1, n2)
-
 def levelOrderArray(root):
   """
   :type root: TreeNode
