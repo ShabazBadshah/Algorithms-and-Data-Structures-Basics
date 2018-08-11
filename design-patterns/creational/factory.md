@@ -11,19 +11,24 @@ __*Note*:__ The classes being constructed by the Factory should always have a co
 
 ``` Java
 
-    public interface Pizza { ... }
+public interface Pizza { ... }
 
-    public class CheesePizza implements Pizza { ... }
-    public class PineapplePizza implements Pizza { ... }
+public class CheesePizza implements Pizza { ... }
+public class PineapplePizza implements Pizza { ... }
 
-    public class PizzaFactory() {
-        public Pizza makePizza(String typeOfPizza) {
-            if (typeOfPizza == "Cheese") { return new CheesePizza(...); }
-            if (typeOfPizza == "Pineapple") { return new PineapplePizza(...); }
-            return null;
-        }
+public class PizzaFactory() {
+    public Pizza makePizza(String typeOfPizza) {
+        if (typeOfPizza == "Cheese") { return new CheesePizza(...); }
+        if (typeOfPizza == "Pineapple") { return new PineapplePizza(...); }
+        return null;
     }
+}
 
-    PizzaFactory pf = new PizzaFactory();
-    Pizza cheesePizza = pf.makePizza("Cheese");
+public class Main {
+    public static void main(String[] args) {
+        PizzaFactory pf = new PizzaFactory();
+        Pizza cheesePizza = pf.makePizza("Cheese");
+    }
+}
+    
 ```
