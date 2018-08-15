@@ -77,7 +77,12 @@ Best-case Runtimes (when the tree is balanced):
 
 ---
 
-__10. Which data structures are applied when dealing with a recursive.__
+## 10. Which data structures are applied when dealing with a recursive function
+
+A stack is used in memory when recursion is used. It will store the return address of the function that called it, so
+when it computes the value it can return it to the parent call.
+
+---
 
 __11. What is a stack?__
 
