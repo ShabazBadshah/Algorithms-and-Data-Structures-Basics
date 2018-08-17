@@ -61,7 +61,7 @@ Worst-case Runtimes:
 
 ## 9. What are binary trees
 
-A Binary Tree is a tree where every node in the tree has at most 2 children. 
+A Binary Tree is a tree where every node in the tree has at most 2 children.
 
 Worst-case Runtimes:
 
@@ -84,7 +84,18 @@ when it computes the value it can return it to the parent call.
 
 ---
 
-__11. What is a stack?__
+## 11. What is a stack
+
+A Stack is a data structure that stores items in a Last-In-First-Out approach (i.e. the last item to be added in is the 
+first item to be removed).
+
+Worst-case Runtimes:
+
+- Search, O(n)
+- Insert/Push, O(1) (when removing a node from the top of the stack)
+- Delete/Pop, O(1) (when removing a node from the top of the stack)
+
+---
 
 __12. Explain Binary Search Tree.__
 
