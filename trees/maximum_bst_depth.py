@@ -8,7 +8,7 @@ class TreeNode:
 
 def maximumTreeDepth(root):
   """
-  :type root: TreeTreeNode
+  :type root: TreeNode
   :rtype: int
 
   Given a binary tree find its maximum depth
