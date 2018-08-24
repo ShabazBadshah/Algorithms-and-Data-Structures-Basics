@@ -13,12 +13,6 @@ class MinStack:
     self.minElement = None
 
   def push(self, x):
-    """
-    :type element: int
-    :rtype: void
-
-    Time: O(1)
-    """
 
     if self.minElement == None:
       self.minElement = x
@@ -27,30 +21,15 @@ class MinStack:
     self.data.append((x, self.minElement))
 
   def pop(self):
-    """
-    :rtype: void
-
-    Time: O(1)
-    """ 
     if self.data:
       self.data.pop()
 
   def top(self):
-    """
-    :rtype: void
-
-    Time: O(1)
-    """ 
     if self.data:
-      return self.data[len(self.data) - 1]
+      return self.data[-1]
     return None
 
   def getMin(self):
-    """
-    :rtype: void
-
-    Time: O(1)
-    """ 
     return self.top()[1]
 
 
