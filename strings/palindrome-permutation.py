@@ -13,8 +13,8 @@ def isPalindrome(string):
       return False
   return True
 
-def palindromePermutation(string):
-
+# Brute Force O(n!) runtime
+def palindromePermutationBad(string):
   allPerms = set([''.join(p) for p in permutations(string)])
 
   for permutation in allPerms:
@@ -23,7 +23,7 @@ def palindromePermutation(string):
 
   return False
   
-print (palindromePermutation("code")) # False
-print (palindromePermutation("aab")) # True
-print (palindromePermutation("carerac")) # True
+print (palindromePermutationBad("code")) # False
+print (palindromePermutationBad("aab")) # True
+print (palindromePermutationBad("carerac")) # True
 
