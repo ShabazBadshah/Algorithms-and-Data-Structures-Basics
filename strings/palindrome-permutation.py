@@ -22,8 +22,30 @@ def palindromePermutationBad(string):
       return True
 
   return False
+
+# Runs in O(n)
+def palindromePermutation(string):
   
+  letterOccurrences = {}
+  moreThanOneOddAmountOccurringLetter = False
+
+  for letter in string:
+    if letter in letterOccurrences:
+      letterOccurrences[letter] += 1
+    else:
+      letterOccurrences[letter] = 1
+
+  for occurrence in letterOccurrences.values():
+    if occurrence % 2 != 0 and not moreThanOneOddAmountOccurringLetter:
+      moreThanOneOddAmountOccurringLetter = True
+    elif occurrence % 2 != 0 and moreThanOneOddAmountOccurringLetter:
+      return False
+  return True
+
 print (palindromePermutationBad("code")) # False
 print (palindromePermutationBad("aab")) # True
 print (palindromePermutationBad("carerac")) # True
-
+print ("-----------------------------------------")
+print (palindromePermutation("code")) # False
+print (palindromePermutation("aab")) # True
+print (palindromePermutation("carerac")) # True
