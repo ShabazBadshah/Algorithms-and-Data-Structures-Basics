@@ -97,7 +97,12 @@ Worst-case Runtimes:
 
 ---
 
-__12. Explain Binary Search Tree.__
+## 12. Explain binary search tree
+
+A Binary Tree is a Node (an object with some value) has two children (a left child and a right child).
+Refer to Q9 for the runtimes for a BST.
+
+---
 
 __13. What are multidimensional arrays?__
 
