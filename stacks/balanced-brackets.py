@@ -12,8 +12,8 @@ def is_balanced(string):
                 return False
             else:
                 curr_bracket = stack.pop()
-                matching_closing_bracket = opening_brackets[closing_brackets.index(bracket)]
-                if curr_bracket != matching_closing_bracket:
+                matching_opening_bracket = opening_brackets[closing_brackets.index(bracket)]
+                if curr_bracket != matching_opening_bracket:
                     return False
         else:
             return False
