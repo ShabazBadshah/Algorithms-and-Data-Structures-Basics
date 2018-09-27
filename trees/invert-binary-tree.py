@@ -31,13 +31,10 @@ Output:
 9   6 3   1
 '''
 def invertBinaryTree(root):
-  if not root:
-    return root
-
-  tmp = root.left
-  root.left = invertBinaryTree(root.right)
-  root.right = invertBinaryTree(tmp)
-  return root
+  if root:
+    root.left, root.right = root.right, root.left
+    invertBinaryTree(root.left)
+    invertBinaryTree(root.right)
 
 
 tree = Node(3, Node(9), Node(20, Node(15), Node(7)))
