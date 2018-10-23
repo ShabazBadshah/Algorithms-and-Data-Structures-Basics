@@ -1,6 +1,6 @@
 # Builder
 
-The builder design pattern is a __creational__ design pattern. It helps with the creation of complex objects using setters to construct them *"piece by piece"* (similar to how we build legos in parts).
+The builder design pattern is a __creational__ design pattern. It helps with the creation of complex objects using setters to construct them *"piece by piece"* (similar to how we build legos in parts). It is used with objects that are immutable which means that once the object has been created, it will not be changed.
 
 ---
 
@@ -61,8 +61,9 @@ public class Main {
 
 ## Factory vs Builder
 
-|  Factory | Builder |
-|  ------- | ------- |
-|  creates entire object with a single call | creates object in pieces |
-|  creates the same object every time | can create several variations of the object |
-|  *avoid construction pollution* | *avoid construction pollution* |
+| Factory                                  | Builder                                     |
+|:-----------------------------------------|:--------------------------------------------|
+| creates entire object with a single call | creates object in pieces                    |
+| creates the same object every time       | can create several variations of the object |
+| *avoid construction pollution*           | *avoid construction pollution*              |
+|                                          | used for immutable objects                  |
