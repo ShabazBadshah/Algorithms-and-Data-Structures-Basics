@@ -14,13 +14,19 @@ MongoDB does not support schemas in contrast to its RDBMS alternatives. Data is 
 
 ## MongoDB vs Relational Database Management Systems
 
-| RDBMS    |  MongoDB   |
-|----------|:----------:|
-| Database |  Database  |
+| RDBMS    | MongoDB    |
+|:---------|:-----------|
+| Database | Database   |
 | Table    | Collection |
-| Row      |  Document  |
-| Column   |   Field    |
+| Row      | Document   |
+| Column   | Field      |
 
 ## MongoDB Database Design and Modelling
 
 ## MongoDB Basic Queries
+
+- Select All: db.collection_name.find();
+- Select Top X: db.collection_name.find().limit(X);
+- Insert Single Document: db.collection_name.insert({field1: "value", field2: "value"});
+- Insert Multiple Documents: db.collection_name.insertMany([{field1: "value"}, {field2: "value"}]);
+- Update Document: db.collection_name.save({"_id": new ObjectId("abc"), field1: "value", field2: "value"});
