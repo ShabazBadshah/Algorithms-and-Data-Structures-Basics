@@ -60,7 +60,7 @@ A Student collection which contains two documents of students and their course i
   ]
 },
 {
-  "_id":  ObjectId("507f191e810c19729de860ea"),
+  "_id": ObjectId("507f191e810c19729de860ea"),
   "studentId": 101,
   "firstName": "Meathead",
   "middleName": "Rob",
@@ -78,7 +78,25 @@ A Student collection which contains two documents of students and their course i
 
 ## MongoDB Database Design and Modelling
 
+MongoDB schemas can be designed in two ways. Since Mongo does not utilize tables to organize data, and does not support joins, we utilize *embedding* and *linking* to associate documents with other collections.
+
 ### Embedding
+
+Embedding is the process where common data that is referenced often is moved into the parent document to reduce additional queries. 
+
+For example, in the example above, we could have made the *"classes"* field into its own *classes* collection and queried for both students and all of their classes. Instead of requiring an additional query, we structured our student object to contain the classes associated to the student.
+
+__Embedding Data:__
+
+- Embed data when it will be queried very often
+- Embed data when the fields that are commonly queried are fairly *static* and don't change often
+- Embed data when there is a one-to-one relationship between two pieces of data
+- Can possibly embed data if there exists a one-to-many relationship (referencing can also be used as well)
+- Insert operations are fairly quick
+- Querying operations are very quick
+- Updating operations can be very complex since the data may need to be updated in multiple locations
+  - Data will "eventually" be consistent
+- Embedding data reduces the amount of queries required to the database
 
 ### Linking/Referencing
 
