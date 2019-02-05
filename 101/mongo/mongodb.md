@@ -78,13 +78,13 @@ A Student collection which contains two documents of students and their course i
 
 ## MongoDB Database Design and Modelling
 
-MongoDB schemas can be designed in two ways. Since Mongo does not utilize tables to organize data, and does not support joins, we utilize *embedding* and *linking* to associate documents with other collections.
+MongoDB schemas can be designed in two ways. Since Mongo does not utilize tables to organize data, and does not support joins, we utilize *embedding* and *referencing* to associate documents with other collections.
 
 ### Embedding
 
-Embedding is the process where common data that is referenced often is moved into the parent document to reduce additional queries. 
+Embedding is the process where common data that is referenced often is moved into the parent document to reduce additional queries.
 
-For example, in the example above, we could have made the *"classes"* field into its own *classes* collection and queried for both students and all of their classes. Instead of requiring an additional query, we structured our student object to contain the classes associated to the student.
+In the example above, we could have made the *"classes"* field into its own *classes* collection and queried for both students and all of their classes. Instead of requiring an additional query, we structured our student object to contain the classes associated to the student.
 
 __Embedding Data:__
 
@@ -92,13 +92,47 @@ __Embedding Data:__
 - Embed data when the fields that are commonly queried are fairly *static* and don't change often
 - Embed data when there is a one-to-one relationship between two pieces of data
 - Can possibly embed data if there exists a one-to-many relationship (referencing can also be used as well)
+- Embedding data reduces the amount of queries required for the database
+
+__Operations on Embedded Data:__:
+
 - Insert operations are fairly quick
 - Querying operations are very quick
 - Updating operations can be very complex since the data may need to be updated in multiple locations
   - Data will "eventually" be consistent
-- Embedding data reduces the amount of queries required to the database
 
-### Linking/Referencing
+### Referencing
+
+Referencing is similar to its RDBMS counterparts where common data can be stored in one location and be linked from multiple different locations.
+
+If we take the student classes example from above and refactor the data model to use reference instead,here is what we would get. Pay attention to the "classes" ObjectId and the "_id" of the class that has been referenced.
+
+```json
+Student Document
+
+{
+  "_id": ObjectId("507f191e810c19729de860ea"),
+  "studentId": 101,
+  "firstName": "Meathead",
+  "middleName": "Rob",
+  "lastName": "Lowe",
+  "classes": [
+    ObjectId("54759eb3c090d83494e2d804")
+  ]
+}
+
+
+Classes Document
+
+{
+  "_id": ObjectId("54759eb3c090d83494e2d804"),
+  "studentId": ObjectId("507f191e810c19729de860ea"),
+  "courseId": "PHY101",
+  "grade": "F",
+  "courseName": "Physics 101",
+  "credits": 3
+}
+```
 
 ## MongoDB Basic Queries
 
