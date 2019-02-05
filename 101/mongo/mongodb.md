@@ -161,8 +161,42 @@ __Operations on Referenced Data:__:
 
 ## MongoDB Basic Queries
 
-- __Select All:__ db.collection_name.find();
-- __Select Top X:__ db.collection_name.find().limit(X);
-- __Insert Single Document:__ db.collection_name.insert({field1: "value", field2: "value"});
-- __Insert Multiple Documents:__ db.collection_name.insertMany([{field1: "value"}, {field2: "value"}]);
-- __Update Document:__ db.collection_name.save({"_id": new ObjectId("abc"), field1: "value", field2: "value"});
+__Creating Collections:__
+
+- __Create collection:__ db.createCollection("collection_name");
+- __Create new collection with data:__ db.collection_name.insertOne({}, {"key1": "a", "key2": "b"} );
+
+__Dropping Collections:__
+
+- __Drop collection:__ db.dropCollection("collection_name");
+
+__Querying Data:__
+
+- __Select all:__ db.collection_name.find();
+- __Select top X:__ db.collection_name.find().limit(X);
+- __Select specific keys:__ db.collection_name.find({}, {"_id": 0, key1": 1, "key5": 1});
+- __Select all with specific condition:__ db.collection_name.find({"key1": "value"});
+- __Select specific keys with specific conditions:__ db.collection_name.find({"key1": "value1"}, {"_id": 0, key1": 1, "key5": 1})
+
+__Inserting Data:__
+
+- __Insert single document:__ db.collection_name.insertOne({field1: "value", field2: "value"});
+- __Insert multiple documents:__ db.collection_name.insertMany([ {field1: "value"}, {field2: "value"} ]);
+
+__Updating Data:__
+
+- __Update document:__ db.collection_name.save({"_id": new ObjectId("abc"), field1: "value", field2: "value"});
+- __Add key to existing collection:__ db.collection_name.updateMany({}, {$set: {"key1": "a"}});
+- __Remove key from existing collection:__ db.collection_name.updateMany({}, {$unset: {"key1": ""}});
+
+__Deleting Data:__
+
+- __Delete data with specific key:__ db.collection_name.deleteOne({"key1": "value1"});
+- __Delete all data with specific key:__ db.collection_name.deleteMany({"key1": "value1"});
+- __Delete everything from collection:__ db.collection_name.deleteMany({});
+
+__Other:__
+
+- __Count:__ db.collection_name.count();
+- __Sort with key in ascending order:__ db.collection_name.find().sort({"key": 1});
+- __Distinct elements:__ db.collection_name.find().distinct();
