@@ -159,6 +159,10 @@ __Operations on Referenced Data:__:
 
 ## Common Design Guidelines
 
+- Don't force relationships on data, MongoDB is not created for relationships between data
+- Try to store data in a single document if possible (i.e. embedding)
+- Design you schema based around how the data will be queried. Structure your data model to be the most performant
+
 ## MongoDB Basic Queries
 
 __Creating Collections:__
