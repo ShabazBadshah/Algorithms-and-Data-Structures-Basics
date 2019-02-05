@@ -14,11 +14,11 @@ MongoDB does not support schemas in contrast to its RDBMS alternatives. Data is 
 
 ## MongoDB vs Relational Database Management Systems
 
-| RDBMS    | MongoDB        |
-|:---------|:---------------|
-| Database | Database       |
-| Table    | Collection     |
-| Row      | Document       |
+| RDBMS    | MongoDB         |
+|:---------|:----------------|
+| Database | Database        |
+| Table    | Collection      |
+| Row      | Document        |
 | Field    | Key:Value Pairs |
 
 - MongoDB does not support foreign key constraints
@@ -96,6 +96,7 @@ __Embedding Data:__
 
 __Operations on Embedded Data:__:
 
+- Performing insert and update operations on a single document is *atomic*
 - Insert operations are fairly quick
 - Querying operations are very quick
 - Updating operations can be very complex since the data may need to be updated in multiple locations
@@ -133,6 +134,30 @@ Classes Document
   "credits": 3
 }
 ```
+
+__Referencing Data:__
+
+- Reference data when there is a one-to-many relationship
+- Reference data when it's important for it to be consistent (i.e. we keep the important data in one place)
+- Reference data that is not often required to be queried; data that is not accessed often
+- If the document size may increase past 16MB, then referencing *must* be used
+
+__Operations on Referenced Data:__:
+
+- Insert operations are very quick
+- Querying operations may be more inefficient then embedding since multiple queries would be required to retrieve data
+- Updating operations would be very quick since you only need to update the data in one location
+
+### Embedding vs Referencing
+
+| Embedding                                         | Referencing                                                              |
+|:--------------------------------------------------|:-------------------------------------------------------------------------|
+| Better for data that will be accessed often       | Better for data that will not be accessed often                          |
+| Use for data that does not change frequently      | Use for data that is required to be consistent across multiple documents |
+| Querying and inserting data is efficient          | Updating and inserting data is very efficient                            |
+| Write operations are atomic at the document level |                                                                          |
+
+## Common Design Guidelines
 
 ## MongoDB Basic Queries
 
