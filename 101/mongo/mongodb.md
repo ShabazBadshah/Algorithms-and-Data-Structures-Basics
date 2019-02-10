@@ -177,7 +177,6 @@ __Dropping Collections:__
 __Querying Data:__
 
 - __Select all:__ db.collection_name.find();
-- __Select top X:__ db.collection_name.find().limit(X);
 - __Select specific keys:__ db.collection_name.find({}, {"_id": 0, key1": 1, "key5": 1});
 - __Select all with specific condition:__ db.collection_name.find({"key1": "value"});
 - __Select specific keys with specific conditions:__ db.collection_name.find({"key1": "value1"}, {"_id": 0, key1": 1, "key5": 1})
@@ -204,3 +203,4 @@ __Other:__
 - __Count:__ db.collection_name.count();
 - __Sort with key in ascending order:__ db.collection_name.find().sort({"key": 1});
 - __Distinct elements:__ db.collection_name.find().distinct();
+- __Grab first X results:__ db.collection_name.find().limit(X);
