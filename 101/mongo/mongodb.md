@@ -14,12 +14,12 @@ MongoDB does not support schemas in contrast to its RDBMS alternatives. Data is 
 
 ## MongoDB vs Relational Database Management Systems
 
-| RDBMS    | MongoDB         |
-|:---------|:----------------|
-| Database | Database        |
-| Table    | Collection      |
-| Row      | Document        |
-| Field    | Key:Value Pairs |
+| RDBMS (Relational Database Management Systems) | MongoDB         |
+|:-----------------------------------------------|:----------------|
+| Database                                       | Database        |
+| Table                                          | Collection      |
+| Row                                            | Document        |
+| Field                                          | Key:Value Pairs |
 
 - MongoDB does not support foreign key constraints
 - MongoDB does not support *Joins*, these are done at the application level
@@ -148,12 +148,16 @@ __Operations on Referenced Data:__:
 - Querying operations may be more inefficient then embedding since multiple queries would be required to retrieve data
 - Updating operations would be very quick since you only need to update the data in one location
 
+### Denormalizing
+
+- TODO
+
 ### Embedding vs Referencing
 
 | Embedding                                         | Referencing                                                              |
 |:--------------------------------------------------|:-------------------------------------------------------------------------|
 | Better for data that will be accessed often       | Better for data that will not be accessed often                          |
-| Use for data that does not change frequently      | Use for data that is required to be consistent across multiple documents |
+| Use for data that does not change frequently      | Use for data that is required to be consistent across multiple documents and may be used in many places |
 | Querying and inserting data is efficient          | Updating and inserting data is very efficient                            |
 | Write operations are atomic at the document level |                                                                          |
 
@@ -205,8 +209,7 @@ __Other:__
 - __Distinct elements:__ db.collection_name.find().distinct();
 - __Grab first X results:__ db.collection_name.find().limit(X);
 
-
-
-## Further Reading 
+## Further Reading
 
 - https://www.slideshare.net/interviewcoach/mongodb-best-practices
+- https://dev.to/mrm8488/mongodb-schema-design-patterns-i-4gdp
